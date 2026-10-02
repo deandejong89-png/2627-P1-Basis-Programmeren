@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(148, 38, 38);
+  background(226, 131, 21);
 
   // alle vormen //
   for (let i = 0; i < x.length; i++) {
