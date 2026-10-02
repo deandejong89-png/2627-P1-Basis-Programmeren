@@ -1,4 +1,4 @@
-// Arrays voor de vormen
+// Arrays voor de vormen //
 let x = [];
 let y = [];
 let grootte = [];
@@ -11,45 +11,45 @@ let snelheid = [];
 function setup() {
   createCanvas(800, 600);
 
-  // Eerste kunstwerk maken
+  // Het Begin maken // 
   maakKunst();
 }
 
 function draw() {
-  background(240);
+  background(148, 38, 38);
 
-  // Alle vormen tekenen
+  // alle vormen //
   for (let i = 0; i < x.length; i++) {
 
     fill(rood[i], groen[i], blauw[i], 180);
     noStroke();
 
-    // Vierkant of cirkel tekenen
+    // vierkant of cirkel tekenen //
     if (vorm[i] == 0) {
       rect(x[i], y[i], grootte[i], grootte[i]);
     } else {
       circle(x[i], y[i], grootte[i]);
     }
 
-    // Beweging
+    // bewegen // 
     y[i] += snelheid[i];
 
-    // Terug naar boven als de vorm uit beeld is
+    // terug gaan //
     if (y[i] > height) {
       y[i] = 0;
     }
   }
 
-  // Tekst onderaan
+  // Tekst onderaan //
   fill(0);
   textSize(18);
   text("Druk op BACKSPACE voor nieuwe kunst", 20, height - 20);
 }
 
-// Nieuwe kunst maken
+// nieuwe //
 function maakKunst() {
 
-  // Arrays leegmaken
+  // Arrays leegmaken //
   x = [];
   y = [];
   grootte = [];
@@ -59,10 +59,10 @@ function maakKunst() {
   vorm = [];
   snelheid = [];
 
-  // Willekeurig aantal vormen
+  // aantal vormen //
   let aantal = floor(random(30, 81));
 
-  // Gegevens opslaan in arrays
+  // gegevens opslaan in arrays //
   for (let i = 0; i < aantal; i++) {
     x.push(random(width));
     y.push(random(height));
@@ -77,7 +77,7 @@ function maakKunst() {
   }
 }
 
-// Backspace maakt nieuwe kunst
+// backspace maakt nieuwe kunst //
 function keyPressed() {
   if (keyCode === BACKSPACE) {
     maakKunst();
